@@ -1,0 +1,27 @@
+{
+    "manifest_version": 2,
+    "name": "goo.gl一鍵縮網址",
+    "description": "縮網址吧！",
+    "version": "0.10",
+    "icons": { "16": "icon.png",
+               "48": "icon.png",
+              "128": "icon.png"
+    },
+    "browser_action": {
+        "default_icon": "icon.png"
+    },
+    "background" : {
+        "scripts" : ["background.js"]
+    },
+    "permissions": [
+        "activeTab",
+        "notifications"
+    ],
+    "content_scripts": [
+        {
+            "matches": ["http://*/*", "https://*/*"],
+            "js": ["script.js"],
+            "run_at": "document_start"
+        }
+    ]
+}
